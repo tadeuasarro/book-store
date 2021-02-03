@@ -8,6 +8,4 @@ const App = () => (
   </div>
 );
 
-console.log(App);
-
 export default App;

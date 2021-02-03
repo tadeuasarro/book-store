@@ -7,8 +7,7 @@ import Book from '../components/Book';
 class BooksDetail extends Component {
   render(){
     return(
-      
-      this.props.books.map( book => {
+      this.props.data.map( book => {
         return (
         <Book id={book.id} title={book.title} category={book.category}/>
         )
@@ -20,7 +19,7 @@ class BooksDetail extends Component {
 
 function mapStateToProps(state) {
   return ({
-    books: state.books,
+    data: state.data,
   });
 }
 

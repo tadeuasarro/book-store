@@ -1,24 +1,17 @@
-const roundID = () => Math.random().toFixed(2) * 100;
-function booksData() {
-  return (
-    [
-      {
-        id: roundID(),
-        title: 'The Lord of the Rings',
-        category: 'Fiction',
-      },
-      {
-        id: roundID(),
-        title: 'Star Wars',
-        category: 'Fiction',
-      },
-      {
-        id: roundID(),
-        title: 'The Witcher',
-        category: 'Fiction',
-      },
-    ]
-  );
-}
+import { CREATE_BOOK, REMOVE_BOOK } from '../actions/constants';
 
-export default booksData;
+const booksReducer = (state = null, action) => {
+  switch (action.type) {
+    case CREATE_BOOK:
+      // do something here
+      break;
+    case REMOVE_BOOK:
+      // do other thing here
+      break;
+    default:
+      return state;
+  }
+  return state;
+};
+
+export default booksReducer;
