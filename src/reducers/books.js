@@ -1,18 +1,19 @@
+const roundID = () => Math.random().toFixed(2) * 100;
 function booksData() {
   return (
     [
       {
-        id: Math.random(),
+        id: roundID(),
         title: 'The Lord of the Rings',
         category: 'Fiction',
       },
       {
-        id: Math.random(),
+        id: roundID(),
         title: 'Star Wars',
         category: 'Fiction',
       },
       {
-        id: Math.random(),
+        id: roundID(),
         title: 'The Witcher',
         category: 'Fiction',
       },

@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Book from '../components/Book';
 
 class BooksDetail extends Component {
   render(){
@@ -9,11 +10,7 @@ class BooksDetail extends Component {
       
       this.props.books.map( book => {
         return (
-        <tr>
-          <td>
-          {book.id}
-          </td>
-        </tr>
+        <Book id={book.id} title={book.title} category={book.category}/>
         )
       })
     )
