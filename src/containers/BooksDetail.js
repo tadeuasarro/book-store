@@ -9,7 +9,7 @@ class BooksDetail extends Component {
     return(
       this.props.data.map( book => {
         return (
-        <Book id={book.id} title={book.title} category={book.category}/>
+        <Book key={book.id} id={book.id} title={book.title} category={book.category}/>
         )
       })
     )

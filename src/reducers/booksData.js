@@ -1,4 +1,4 @@
-const roundID = () => (Math.random() * 100).toFixed(0);
+const roundID = () => Number((Math.random() * 100).toFixed(0));
 function booksData() {
   return (
     [
