@@ -6,7 +6,16 @@ import { connect } from 'react-redux';
 class BooksDetail extends Component {
   render(){
     return(
-      <div>{this.props.books}</div>
+      
+      this.props.books.map( book => {
+        return (
+        <tr>
+          <td>
+          {book.id}
+          </td>
+        </tr>
+        )
+      })
     )
   }
 

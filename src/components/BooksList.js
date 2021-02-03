@@ -3,14 +3,16 @@ import BooksDetail from '../containers/BooksDetail';
 const BooksList = () => (
   <div>
     <table>
-      <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Category</th>
-      </tr>
-      <tr>
+      <tbody>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Category</th>
+        </tr>
+
         <BooksDetail />
-      </tr>
+
+      </tbody>
     </table>
   </div>
 );
