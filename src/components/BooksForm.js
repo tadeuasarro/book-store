@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { addBook } from '../actions/index';
 
 const CATEGORIES = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
@@ -12,6 +13,7 @@ class BooksForm extends Component {
       category: '',
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -28,8 +30,21 @@ class BooksForm extends Component {
     }
   }
 
-  handleSubmit(event) {
-    
+  handleSubmit() {
+    const { title, category } = this.state;
+    const { addBook } = this.props;
+    const book = {
+      title,
+      category,
+      id: Math.random(),
+    };
+
+    this.setState({
+      title: '',
+      category: '',
+    });
+
+    addBook(book);
   }
 
   render() {
@@ -45,14 +60,18 @@ class BooksForm extends Component {
             </option>
           ))}
         </select>
-        <button type="button">Add Book</button>
+        <button type="button" onClick={this.handleSubmit}>Add Book</button>
       </form>
     );
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  addBook: () => dispatch(addBook()),
+  addBook: book => dispatch(addBook(book)),
 });
+
+BooksForm.propTypes = {
+  addBook: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(BooksForm);
