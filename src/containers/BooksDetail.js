@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
+import { deleteBook } from '../actions/index';
 
 const handleRemoveBook = id => {
   console.log(id);
+  deleteBook(id);
 };
 
 class BooksDetail extends Component {
@@ -43,4 +45,8 @@ BooksDetail.defaultProps = {
   books: [{}],
 };
 
-export default connect(mapStateToProps)(BooksDetail);
+const mapDispatchToProps = dispatch => ({
+  deleteBook: book => dispatch(deleteBook(book)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BooksDetail);
