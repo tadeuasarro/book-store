@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addBook } from '../actions/index';
 
 const CATEGORIES = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
@@ -24,7 +26,10 @@ class BooksForm extends Component {
         category: event.target.value,
       });
     }
-    console.log(this);
+  }
+
+  handleSubmit(event) {
+    
   }
 
   render() {
@@ -46,4 +51,8 @@ class BooksForm extends Component {
   }
 }
 
-export default BooksForm;
+const mapDispatchToProps = dispatch => ({
+  addBook: () => dispatch(addBook()),
+});
+
+export default connect(null, mapDispatchToProps)(BooksForm);
