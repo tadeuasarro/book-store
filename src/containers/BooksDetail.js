@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 
+const handleRemoveBook = id => {
+  console.log(id);
+};
+
 class BooksDetail extends Component {
   render() {
     const bookArr = Object.values(this.props.books.books); // eslint-disable-line
@@ -10,7 +14,13 @@ class BooksDetail extends Component {
       bookArr.map(book => { // eslint-disable-line
         const { id, title, category } = book;
         return (
-          <Book key={id} id={id} title={title} category={category} />
+          <Book
+            key={id}
+            id={id}
+            title={title}
+            category={category}
+            handleRemoveBook={handleRemoveBook}
+          />
         );
       })
     );
