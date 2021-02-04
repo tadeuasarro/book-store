@@ -13,26 +13,29 @@ class BooksForm extends Component {
   }
 
   handleChange(event) {
-    console.log(event);
-    this.setState({
-      title: event.target.value,
-      category: event.target.value,
-    });
+    if (event.target.nodeName === 'INPUT') {
+      this.setState({
+        ...event,
+        title: event.target.value,
+      });
+    } else if (event.target.nodeName === 'SELECT') {
+      this.setState({
+        ...event,
+        category: event.target.value,
+      });
+    }
+    console.log(this);
   }
 
   render() {
-    const { title, category} = this.state;
+    const { title, category } = this.state;
     return (
       <form>
         <h3 htmlFor="title">Title</h3>
         <input onChange={this.handleChange} type="text" id="title" value={title} />
-        <select>
+        <select onChange={this.handleChange} value={category}>
           {CATEGORIES.map(category => (
-            <option
-              onChange={this.handleChange}
-              key={category}
-              value={category}
-            >
+            <option key={category}>
               {category}
             </option>
           ))}
