@@ -2,6 +2,7 @@ import { CREATE_BOOK, REMOVE_BOOK } from '../actions/constants';
 
 const roundID = () => Number((Math.random() * 10000).toFixed(0));
 const booksData = {
+  books: [
     {
       id: roundID(),
       title: 'The Lord of the Rings',
@@ -22,13 +23,17 @@ const booksData = {
       title: 'The Amazing Spider Man',
       category: 'Comic',
     },
+  ],
 };
 
 const booksReducer = (state = booksData, action) => {
-  console.log(state);
-  console.log(action.book);
+  const books = state.books; // eslint-disable-line
   switch (action.type) {
     case CREATE_BOOK:
+      if (action.book !== undefined) {
+        books.push(action.book);
+        return ({ books });
+      }
       break;
     case REMOVE_BOOK:
       // do other thing here
