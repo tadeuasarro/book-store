@@ -1,4 +1,4 @@
-import BooksDetail from '../containers/BooksDetail';
+import BooksDetail from './BooksDetail';
 
 const BooksList = () => (
   <div>
