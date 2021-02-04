@@ -36,7 +36,7 @@ class BooksForm extends Component {
     const book = {
       title,
       category,
-      id: Math.random(),
+      id: Number((Math.random() * 10000).toFixed(0)),
     };
 
     this.setState({
@@ -54,6 +54,7 @@ class BooksForm extends Component {
         <h3 htmlFor="title">Title</h3>
         <input onChange={this.handleChange} type="text" id="title" value={title} />
         <select onChange={this.handleChange} value={category}>
+          <option>Select:</option>
           {CATEGORIES.map(category => (
             <option key={category}>
               {category}

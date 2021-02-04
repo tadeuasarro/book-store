@@ -5,8 +5,9 @@ import Book from '../components/Book';
 
 class BooksDetail extends Component {
   render() {
+    const bookArr = Object.values(this.props.books.books); // eslint-disable-line
     return (
-      this.props.data.map(book => { // eslint-disable-line
+      bookArr.map(book => { // eslint-disable-line
         const { id, title, category } = book;
         return (
           <Book key={id} id={id} title={title} category={category} />
@@ -18,16 +19,18 @@ class BooksDetail extends Component {
 
 function mapStateToProps(state) {
   return ({
-    data: state.data,
+    books: state.books,
   });
 }
 
 BooksDetail.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object),
+  books: PropTypes.shape({
+    books: PropTypes.arrayOf(PropTypes.object),
+  }),
 };
 
 BooksDetail.defaultProps = {
-  data: [{}],
+  books: [{}],
 };
 
 export default connect(mapStateToProps)(BooksDetail);

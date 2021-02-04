@@ -1,10 +1,34 @@
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/constants';
 
-const booksReducer = (state = null, action) => {
-  console.log('testing');
+const roundID = () => Number((Math.random() * 10000).toFixed(0));
+const booksData = {
+    {
+      id: roundID(),
+      title: 'The Lord of the Rings',
+      category: 'Fiction',
+    },
+    {
+      id: roundID(),
+      title: 'Star Wars',
+      category: 'Fiction',
+    },
+    {
+      id: roundID(),
+      title: 'The Witcher',
+      category: 'Fiction',
+    },
+    {
+      id: roundID(),
+      title: 'The Amazing Spider Man',
+      category: 'Comic',
+    },
+};
+
+const booksReducer = (state = booksData, action) => {
+  console.log(state);
+  console.log(action.book);
   switch (action.type) {
     case CREATE_BOOK:
-      // do something here
       break;
     case REMOVE_BOOK:
       // do other thing here
