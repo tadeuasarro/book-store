@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import { deleteBook, filterBook } from '../actions/index';
+import { filterBook, deleteBook } from '../actions/index';
 import CategoryFilter from '../components/CategoryFilter';
 
 class BooksList extends Component {
