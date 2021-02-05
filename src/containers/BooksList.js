@@ -1,29 +1,35 @@
-/* eslint-disable */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Book from '../components/Book';
+import { deleteBook } from '../actions/index';
 
 class BooksList extends Component {
+  constructor(props) {
+    super(props);
+    this.handleRemoveBook = this.handleRemoveBook.bind(this);
+  }
+
+  handleRemoveBook(id) {
+    const { removeBook } = this.props;
+    removeBook(id);
+  }
+
   render() {
-    const bookArr = Object.values(this.props.books.books);
+    const bookArr = Object.values(this.props.books.books); // eslint-disable-line
     return (
-      <div>
-        <table>
-          <tbody>
-            <tr>
-              <th>Id</th>
-              <th>Title</th>
-              <th>Category</th>
-            </tr>
-
-            {bookArr.map(book => (
-              <Book key={book.id} id={book.id} title={book.title} category={book.category} />
-            ))}
-
-          </tbody>
-        </table>
-      </div>
-
+      bookArr.map(book => { // eslint-disable-line
+        const { id, title, category } = book;
+        return (
+          <Book
+            key={id}
+            id={id}
+            title={title}
+            category={category}
+            handleRemoveBook={this.handleRemoveBook}
+          />
+        );
+      })
     );
   }
 }
@@ -34,4 +40,19 @@ function mapStateToProps(state) {
   });
 }
 
-export default connect(mapStateToProps)(BooksList);
+BooksList.propTypes = {
+  removeBook: PropTypes.func.isRequired,
+  books: PropTypes.shape({
+    books: PropTypes.arrayOf(PropTypes.object),
+  }),
+};
+
+BooksList.defaultProps = {
+  books: [{}],
+};
+
+const mapDispatchToProps = dispatch => ({
+  removeBook: id => dispatch(deleteBook(id)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
