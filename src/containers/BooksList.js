@@ -10,6 +10,7 @@ class BooksList extends Component {
     super(props);
     this.handleRemoveBook = this.handleRemoveBook.bind(this);
     this.handleFilterChange = this.handleFilterChange.bind(this);
+    this.selectFilteredBooks = this.selectFilteredBooks.bind(this);
   }
 
   handleRemoveBook(id) {
@@ -22,13 +23,22 @@ class BooksList extends Component {
     changeFilter(event);
   }
 
+  selectFilteredBooks() {
+    const { filter } = this.props;
+    const books = this.props.books.books; // eslint-disable-line
+    if (filter === 'All') {
+      return books;
+    }
+    return books.filter(book => book.category === filter);
+  }
+
   render() {
-    const bookArr = Object.values(this.props.books.books); // eslint-disable-line
+    const filteredBooks = this.selectFilteredBooks();
     return (
       <div>
         <table>
           <tbody>
-            {bookArr.map(book => { // eslint-disable-line
+            {filteredBooks.map(book => { // eslint-disable-line
               const { id, title, category } = book;
               return (
                 <Book
@@ -49,6 +59,7 @@ class BooksList extends Component {
 }
 
 BooksList.propTypes = {
+  filter: PropTypes.string.isRequired,
   removeBook: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
   books: PropTypes.shape({

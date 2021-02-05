@@ -7,22 +7,22 @@ const bookData = {
     {
       id: roundID(),
       title: 'The Lord of the Rings',
-      category: 'Fiction',
+      category: 'Action',
     },
     {
       id: roundID(),
       title: 'Star Wars',
-      category: 'Fiction',
+      category: 'Action',
     },
     {
       id: roundID(),
       title: 'The Witcher',
-      category: 'Fiction',
+      category: 'Action',
     },
     {
       id: roundID(),
       title: 'The Amazing Spider Man',
-      category: 'Comic',
+      category: 'Sci-Fi',
     },
   ],
   filter: 'All',
