@@ -1,6 +1,6 @@
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/constants';
 
-const roundID = () => Number((Math.random() * 100).toFixed(0));
+const roundID = () => Number((Math.random() * 10000).toFixed(0));
 
 const bookData = {
   books: [
