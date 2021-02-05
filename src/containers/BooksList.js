@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { deleteBook } from '../actions/index';
+import CategoryFilter from '../components/CategoryFilter';
 
 class BooksList extends Component {
   constructor(props) {
@@ -18,18 +19,21 @@ class BooksList extends Component {
   render() {
     const bookArr = Object.values(this.props.books.books); // eslint-disable-line
     return (
-      bookArr.map(book => { // eslint-disable-line
-        const { id, title, category } = book;
-        return (
-          <Book
-            key={id}
-            id={id}
-            title={title}
-            category={category}
-            handleRemoveBook={this.handleRemoveBook}
-          />
-        );
-      })
+      <div>
+        {bookArr.map(book => { // eslint-disable-line
+          const { id, title, category } = book;
+          return (
+            <Book
+              key={id}
+              id={id}
+              title={title}
+              category={category}
+              handleRemoveBook={this.handleRemoveBook}
+            />
+          );
+        })}
+        <CategoryFilter />
+      </div>
     );
   }
 }
