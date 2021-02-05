@@ -1,6 +1,6 @@
 # React Bookstore
 Front-End for an application that helps organize and manage a bookstore.
-It allows the user to input a title and select a categorys of the book to add.
+It allows the user to input a title and select a category of the book to add.
 The user also can remove the selected book from the table. 
 
 ## Screenshot
@@ -48,6 +48,7 @@ https://tf-react-bookstore.herokuapp.com/
 - HTML
 - CSS
 - Create-React-App
+- Redux
 
 
 ## Contributors
