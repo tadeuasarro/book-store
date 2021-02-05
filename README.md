@@ -1,5 +1,10 @@
 # React Bookstore
-Front-End for an application that helps organize and manage a bookstore
+Front-End for an application that helps organize and manage a bookstore.
+It allows the user to input a title and select a categorys of the book to add.
+The user also can remove the selected book from the table. 
+
+## Screenshot
+![screen1](https://user-images.githubusercontent.com/52765379/107053934-366cc300-67ae-11eb-8c40-41ff772849d3.png)
 
 ## Running the project
 
