@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { deleteBook } from '../actions/index';
 
-class BooksDetail extends Component {
+class BooksList extends Component {
   constructor(props) {
     super(props);
     this.handleRemoveBook = this.handleRemoveBook.bind(this);
@@ -40,14 +40,14 @@ function mapStateToProps(state) {
   });
 }
 
-BooksDetail.propTypes = {
+BooksList.propTypes = {
   removeBook: PropTypes.func.isRequired,
   books: PropTypes.shape({
     books: PropTypes.arrayOf(PropTypes.object),
   }),
 };
 
-BooksDetail.defaultProps = {
+BooksList.defaultProps = {
   books: [{}],
 };
 
@@ -55,4 +55,4 @@ const mapDispatchToProps = dispatch => ({
   removeBook: id => dispatch(deleteBook(id)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(BooksDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
