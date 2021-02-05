@@ -25,6 +25,7 @@ const bookData = {
       category: 'Comic',
     },
   ],
+  filter: 'All',
 };
 
 const booksReducer = (state = bookData, action) => {
