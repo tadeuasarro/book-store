@@ -28,13 +28,16 @@ const bookData = {
 };
 
 const booksReducer = (state = bookData, action) => {
+  const books = state.books; // eslint-disable-line
   switch (action.type) {
     case CREATE_BOOK:
-      // do something here
+      if (action.book !== undefined) {
+        books.push(action.book);
+        return ({ books });
+      }
       break;
     case REMOVE_BOOK:
-      // do other thing here
-      break;
+      return ({ books: books.filter(book => book.id !== action.book) });
     default:
       return state;
   }
