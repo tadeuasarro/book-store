@@ -4,12 +4,22 @@ import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { deleteBook } from '../actions/index';
 
-const handleRemoveBook = id => {
-  console.log(id);
-  deleteBook(id);
-};
+// const handleRemoveBook = id => {
+//   console.log(id);
+//    removeBook(id);
+// };
 
 class BooksDetail extends Component {
+  constructor(props) {
+    super(props);
+    this.handleRemoveBook = this.handleRemoveBook.bind(this);
+  }
+
+  handleRemoveBook(id) {
+    const { removeBook } = this.props;
+    removeBook(id);
+  }
+
   render() {
     const bookArr = Object.values(this.props.books.books); // eslint-disable-line
     return (
@@ -21,7 +31,7 @@ class BooksDetail extends Component {
             id={id}
             title={title}
             category={category}
-            handleRemoveBook={handleRemoveBook}
+            handleRemoveBook={this.handleRemoveBook}
           />
         );
       })
@@ -36,6 +46,7 @@ function mapStateToProps(state) {
 }
 
 BooksDetail.propTypes = {
+  removeBook: PropTypes.func.isRequired,
   books: PropTypes.shape({
     books: PropTypes.arrayOf(PropTypes.object),
   }),
@@ -46,7 +57,7 @@ BooksDetail.defaultProps = {
 };
 
 const mapDispatchToProps = dispatch => ({
-  deleteBook: book => dispatch(deleteBook(book)),
+  removeBook: id => dispatch(deleteBook(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksDetail);
