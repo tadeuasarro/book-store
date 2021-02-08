@@ -50,18 +50,20 @@ class BooksForm extends Component {
   render() {
     const { title, category } = this.state;
     return (
-      <form>
-        <h3 htmlFor="title">Title</h3>
-        <input onChange={this.handleChange} type="text" id="title" value={title} />
-        <select onChange={this.handleChange} value={category}>
-          <option>Select:</option>
-          {CATEGORIES.map(category => (
-            <option key={category}>
-              {category}
-            </option>
-          ))}
-        </select>
-        <button type="button" onClick={this.handleSubmit}>Add Book</button>
+      <form className="font-montserrat">
+        <h3 className="form-title text-bold text-uppercase" htmlFor="title">Add New Book</h3>
+        <div className="d-flex j-c-space-between">
+          <input className="thin-grey-border" placeholder="Book Title" onChange={this.handleChange} type="text" id="title" value={title} />
+          <select className="thin-grey-border" onChange={this.handleChange} value={category}>
+            <option>Category</option>
+            {CATEGORIES.map(category => (
+              <option key={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+          <button className="add-book-btn font-roboto text-bold text-uppercase bg-blue text-white" type="button" onClick={this.handleSubmit}>Add Book</button>
+        </div>
       </form>
     );
   }
