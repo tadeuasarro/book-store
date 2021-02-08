@@ -55,7 +55,7 @@ body {
 }
 
 .text-white {
-  color: #fff
+  color: #fff;
 }
 
 .bg-white {
@@ -77,7 +77,7 @@ body {
 nav {
   height: 95px;
   padding: 0 100px;
-  border-bottom: 2px solid #e8e8e8;;
+  border-bottom: 2px solid #e8e8e8;
 }
 
 .title {
