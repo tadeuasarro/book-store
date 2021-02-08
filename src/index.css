@@ -1,3 +1,246 @@
-.test {
-  color: aqua;
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #f5f6fa;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.j-c-center {
+  justify-content: center;
+}
+
+.j-c-start {
+  justify-content: flex-start;
+}
+
+.j-c-space-between {
+  justify-content: space-between;
+}
+
+.a-items-center {
+  align-items: center;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-roboto {
+  font-family: 'Roboto Slab', serif;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-light {
+  font-weight: 300;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-blue {
+  color: #0290ff;
+}
+
+.text-white {
+  color: #fff
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-blue {
+  background-color: #0290ff;
+}
+
+.thin-grey-border {
+  border: solid 1px #e8e8e8;
+}
+
+.w-full {
+  width: 100%;
+}
+
+nav {
+  height: 95px;
+  padding: 0 100px;
+  border-bottom: 2px solid #e8e8e8;;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.nav-link {
+  font-size: 13px;
+  letter-spacing: 1.9px;
+  margin-left: 41px;
+}
+
+.user-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-left: auto;
+}
+
+.cards-container {
+  margin: 37px 100px;
+}
+
+.card {
+  margin-top: 15px;
+  border-radius: 4px;
+}
+
+.info {
+  flex: 1;
+  margin: 32px 0 28px 27px;
+}
+
+.details-category {
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+.details-title {
+  font-size: 22px;
+  letter-spacing: -0.2px;
+}
+
+.details-author {
+  font-size: 14px;
+  color: #4386bf;
+}
+
+.action-container {
+  margin-top: 21px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #4386bf;
+  padding: 0 15px 0 0;
+}
+
+.action-btn-remove {
+  border-right: 2px solid #e8e8e8;
+  border-left: 2px solid #e8e8e8;
+  padding: 0 15px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.book-progress {
+  justify-content: space-evenly;
+  flex: 2;
+  margin: 32px 0 28px 27px;
+}
+
+.progress-circle {
+  width: 68px;
+  height: 68px;
+  border: 5px solid  #e8e8e8;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.progress-percentage {
+  font-size: 32px;
+}
+
+.progress-text {
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+.v-line {
+  width: 2px;
+  height: 70px;
+  border-left: 1px solid #e8e8e8;
+  margin: auto 0;
+}
+
+.chapter-progress-title {
+  opacity: 0.5;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+.chapter-progress-btn {
+  border: none;
+  width: 184px;
+  height: 33px;
+  border-radius: 3px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  margin-top: 23px;
+}
+
+hr {
+  margin-top: 40px;
+}
+
+form {
+  margin: 0 100px 265px 100px;
+  margin-bottom: 265px;
+}
+
+.form-title,
+.filter-title {
+  font-size: 20px;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+.form-title {
+  margin-bottom: 19px;
+}
+
+.filter-title {
+  margin-right: 27px;
+}
+
+input,
+select {
+  height: 45px;
+  border-radius: 4px;
+  font-size: 16px;
+  letter-spacing: -0.15px;
+  color: #c4c4c4;
+  padding-left: 17px;
+}
+
+input {
+  width: 55%;
+}
+
+select {
+  width: 25%;
+}
+
+.add-book-btn {
+  height: 45px;
+  border-radius: 3px;
+  border: none;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  width: 184px;
 }
