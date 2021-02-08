@@ -35,24 +35,24 @@ class BooksList extends Component {
   render() {
     const filteredBooks = this.selectFilteredBooks();
     return (
-      <div>
-        <table>
-          <tbody>
-            {filteredBooks.map(book => { // eslint-disable-line
-              const { id, title, category } = book;
-              return (
-                <Book
-                  key={id}
-                  id={id}
-                  title={title}
-                  category={category}
-                  handleRemoveBook={this.handleRemoveBook}
-                />
-              );
-            })}
-          </tbody>
-        </table>
-        <CategoryFilter filter={this.handleFilterChange} />
+      <div className="cards-container d-flex flex-column a-items-center j-c-center">
+        <div className="w-full d-flex j-c-start font-montserrat a-items-center">
+          <h3 className="filter-title text uppercase">Filter Books</h3>
+          <CategoryFilter filter={this.handleFilterChange} />
+        </div>
+          {filteredBooks.map(book => { // eslint-disable-line
+            const { id, title, category } = book;
+            return (
+              <Book
+                key={id}
+                id={id}
+                title={title}
+                category={category}
+                handleRemoveBook={this.handleRemoveBook}
+              />
+            );
+          })}
+        <hr className="w-full thin-grey-border" />
       </div>
     );
   }
