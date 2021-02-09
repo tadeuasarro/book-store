@@ -23,17 +23,18 @@ class BooksList extends Component {
     changeFilter(event);
   }
 
-  selectFilteredBooks() {
+  async selectFilteredBooks() {
     const { filter } = this.props;
-    const books = this.props.books.books; // eslint-disable-line
+    const books = await this.props.books.books; // eslint-disable-line
     if (filter === 'All') {
       return books;
     }
     return books.filter(book => book.category === filter);
   }
 
-  render() {
-    const filteredBooks = this.selectFilteredBooks();
+  async render() {
+    const filteredBooks = await this.selectFilteredBooks();
+    console.log(filteredBooks);
     return (
       <div className="cards-container d-flex flex-column a-items-center j-c-center">
         <div className="w-full d-flex j-c-start font-montserrat a-items-center">
@@ -72,6 +73,7 @@ BooksList.defaultProps = {
 };
 
 function mapStateToProps(state) {
+  console.log(state);
   return ({
     books: state.books,
     filter: state.filter,

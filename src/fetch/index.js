@@ -1,6 +1,6 @@
 const uri = 'http://localhost:5000/books';
 
-const apiFetch = () => {
+const booksIndex = () => {
   async function result() {
     const response = await fetch(
       `${uri}.json`,
@@ -11,9 +11,9 @@ const apiFetch = () => {
     );
 
     const resp = await response.json();
-    console.log(resp);
+    return resp;
   }
-  result();
+  return result();
 };
 
-export default apiFetch;
+export default booksIndex;
